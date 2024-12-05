@@ -1,0 +1,2565 @@
+/* Button */
+b.add {
+    display: inline-block;
+    background: #fff;
+    padding: 8px 40px;
+    border-radius: 25px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+b.add:hover {
+    background: #f5b300;
+}
+body:not(.l1) b.add {
+    background: #5d6475;
+}
+/* loader */
+i.loa, i.lod {
+    -webkit-animation: fa-spin 1s infinite steps(8);
+    animation: fa-spin 1s infinite steps(8);
+}
+i.loa {
+    top: auto !important;
+    left: auto !important;
+    opacity: 1 !important;
+}
+i.loa:after {
+    content: '\f110';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+    font-style: normal;
+    color: rgb(121, 135, 155);
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+/* Menu */
+i.menu1, i.clos1, i.plus1, i.dele1, i.dele2 {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+i.menu1:after, i.menu1:before, i.clos1:after, i.clos1:before, i.plus1:after, i.plus1:before, i.dele1:after, i.dele1:before, i.dele2:after, i.dele2:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #000;
+    border-radius: 10px;
+}
+
+body.l2 i.menu1:after, body.l2 i.menu1:before, body.l2 i.clos1:after, body.l2 i.clos1:before, body.l2 i.plus1:after, body.l2 i.plus1:before, body.l2 i.dele1:after, body.l2 i.dele1:before, body.l2 i.dele2:after, body.l2 i.dele2:before {
+    background: #fff;
+}
+
+body.l1 i.clos1:after, body.l1 i.clos1:before, body.l1 i.plus1:after, body.l1 i.plus1:before, body.l1 i.dele1:after, body.l1 i.dele1:before, body.l1 i.dele2:after, body.l1 i.dele2:before {
+    background: #000;
+}
+
+i.menu1:after {
+    bottom: 0;
+}
+
+i.menu1:before {
+    top: 0;
+    box-shadow: -7px 10px 0 #000;
+}
+
+body.l2 i.menu1:before {
+    box-shadow: -7px 10px 0 #fff;
+}
+
+i.menu1:hover:before {
+    box-shadow: -14px 10px 0 #000;
+}
+
+body.l2 i.menu1:hover:before {
+    box-shadow: -14px 10px 0 #fff;
+}
+
+i.menu1.act:before, i.clos1:before, i.dele1:before, i.dele2:before, body.l2 i.menu1.act:before {
+    transform: rotate(45deg);
+    top: calc(50% - 2px);
+    box-shadow: none;
+}
+
+i.menu1.act:after, i.clos1:after, i.dele1:after, i.dele2:after {
+    transform: rotate(-45deg);
+    bottom: 50%;
+}
+i.menu1.act:hover, i.clos1:hover, i.dele1:hover, i.dele2:hover {
+    transform: rotate(90deg);
+}
+
+i.plus1:before {
+    top: calc(50% - 2px);
+    box-shadow: none;
+}
+
+i.plus1:after {
+    transform: rotate(-90deg);
+    bottom: 50%;
+}
+
+i.plus1:hover {
+    transform: rotate(90deg);
+}
+i.delete {
+
+}
+/* circle */
+i.circle {
+    display: inline-block;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 100%;
+}
+/* User */
+i.user1 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+i.user1:before, i.user1:after {
+    display: block;
+    content: "";
+    border: 1px solid #000;
+}
+
+i.user1:before {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin: 2px auto;
+    -o-transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+    transition-duration: 2s;
+}
+
+i.user1:after {
+    width: 20px;
+    height: 12px;
+    margin: auto;
+    border-radius: 5px 5px 0 0;
+}
+
+i.user1:hover:before {
+    transform: rotateY(180deg);
+}
+
+i.user1.act:before {
+    transform: rotateY(0deg);
+}
+/* Search */
+/*
+i.search {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #000000;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: left;
+}
+
+i.search:before, i.search:after {
+    display: inline-block;
+    content: "";
+}
+
+i.search:before {
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 100%;
+    margin: 2px;
+    -o-transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+    transition-duration: 2s;
+}
+
+i.search:hover:before {
+    transform: rotate3d(1, 1, 0, 180deg);
+}
+
+i.search:after {
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    width: 14px;
+    transform: rotate(45deg);
+    border: 1px solid;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+i.search.add:before {
+    content: "+";
+    font-size: 21px;
+    line-height: .8;
+    text-indent: 2px;
+}
+i.search.open:before {
+    content: "";
+    background: url('/img/loader.gif') 50% 50% / 80% no-repeat;
+}
+body:not(.l1) i.search {
+    color: #fff;
+}
+i.search.min {
+    width: 23px;
+    height: 23px;
+}
+i.search.min:before {
+    width: 16px;
+    height: 16px;
+}
+i.search.min:after {
+    right: 1px;
+    bottom: 4px;
+    width: 8px;
+}
+*/
+/* Star */
+i.star {
+    font-size: 40px;
+    font-style: normal;
+    cursor: pointer;
+    line-height: .6;
+}
+i.star:before {
+    content: "\2606";
+}
+i.star:hover:before, i.star.act:before {
+    content: "\2605";
+    color: gold;
+}
+/* ostar */
+i.icb.ostar, i.icb.ostar:before {
+    width: 28px;
+    height: 28px;
+    background-position: -259px -46px;
+}
+/* logout */
+i.logout {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    cursor: pointer;
+}
+
+i.logout {
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-radius: 5px;
+}
+body:not(.l1) i.logout {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+i.logout i:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    left: -2px;
+    right: 12px;
+    height: 1px;
+    background: #000;
+    border-radius: 10px;
+    transform: rotate(40deg);
+}
+body:not(.l1) i.logout i:after {
+    background: #fff;
+}
+i.logout:before {
+    position: absolute;
+    content: "";
+    top: 11px;
+    right: 7px;
+    left: -1px;
+    height: 1px;
+    background: #000;
+    border-radius: 10px;
+}
+body:not(.l1) i.logout:before {
+    background: #fff;
+}
+i.logout i:before {
+    position: absolute;
+    content: "";
+    top: 8px;
+    left: -2px;
+    right: 12px;
+    height: 1px;
+    background: #000;
+    border-radius: 10px;
+    transform: rotate(-40deg);
+}
+body:not(.l1) i.logout i:before {
+    background: #fff;
+}
+i.logout:hover:before {
+    left: -3px;
+    right: 10px;
+}
+
+i.logout:hover i:before {
+    left: -4px;
+    right: 14px;
+}
+
+i.logout:hover i:after {
+    left: -4px;
+    right: 14px;
+}
+/* icons.3.svg */
+i.iv, a.iv, s.iv, i.ivb, i.ivb:before, i.iva:after {
+    cursor: pointer;
+    display: inline-block;
+    background-image: url('/skin/3/gif/icons_3.svg');
+}
+i.iva:after {
+    content: '';
+}
+i.ivb.forever {
+    width: 84px;
+    height: 14px;
+    background-position: -618px -112px;
+}
+i.ivb.foreverlight {
+    width: 80px;
+    height: 24px;
+    background-position: -721px -107px;
+}
+i.ivb.setty {
+    width: 48px;
+    height: 23px;
+    background-position: -834px -107px;
+}
+i.ivb.myphone {
+    width: 90px;
+    height: 23px;
+    background-position: -906px -107px;
+}
+i.ivb.maxlife {
+    width: 72px;
+    height: 18px;
+    background-position: -1007px -110px;
+}
+i.ivb.tfosupplesline {
+    width: 41px;
+    height: 18px;
+    background-position: -1088px -110px;
+}
+i.ivb.three {
+    width: 25px;
+    height: 27px;
+    background-position: -1px -132px;
+}
+i.ivb.delivery, i.ivb.delivery:before {
+    width: 21px;
+    height: 14px;
+    background-position: -451px -72px;
+}
+i.iv.settings, s.iv.settings {
+    width: 24px;
+    height: 29px;
+    transition: .5s;
+    background-position: -635px -62px;
+}
+/*
+i.iv.num_m {
+    width: 35px;
+    height: 35px;
+    background-position: -220px -62px;
+}
+i.iv.num_p {
+    width: 35px;
+    height: 35px;
+    background-position: -193px -62px;
+}
+*/
+/* icons.svg */
+i.ic, a.ic, i.icb, i.icb:before {
+    cursor: pointer;
+    display: inline-block;
+    background-image: url('/skin/3/gif/icons_2.svg');
+}
+i.icb:before {
+    content: '';
+    opacity: 0;
+    transition: .5s;
+}
+i.icb:hover:before {
+    opacity: 1;
+    transform: scale(0);
+}
+.ic.white, body.l2 .ic, body.l2 .icb, body.l2 .ivb, body.l3 .ic, body.l3 .icb {
+    filter: invert(1);
+}
+.ic.white:hover {
+    filter: invert(0);
+}
+body.l2 .ic b, body.l2 .icb b {
+    /*background: #5d6475;*/
+}
+body.l2 .ic b, body.l2 .icb b {
+    background: #222222;
+}
+body.l3 .ic b, body.l3 .icb b {
+    background: rgba(93, 100, 117, 0.8);
+}
+/* status */
+i.ic.status {
+    width: 14px;
+    height: 52px;
+    transform: rotate(90deg);
+}
+i.ic.status.st0 {
+    background-position: -23px -25px;
+}
+i.ic.status.st1 {
+    background-position: -48px -25px;
+}
+i.ic.status.st2 {
+    background-position: -73px -25px;
+}
+i.ic.status.st3 {
+    background-position: -98px -25px;
+}
+i.ic.status.st4, i.status.st5 {
+    background-position: -123px -25px;
+}
+i.ic.status.st9 {
+    background-position: -23px -25px;
+    animation: status 5s linear 2s infinite alternate;
+}
+@keyframes status {
+  0%   { background-position: -23px -25px; }
+  25%  { background-position: -48px -25px; }
+  50%  { background-position: -73px -25px; }
+  75%  { background-position: -98px -25px; }
+  100% { background-position: -123px -25px; }
+}
+
+i.ivb.status {
+    width: 56px;
+    height: 10px;
+}
+i.ivb.status.st0 {
+    background-position: -725px -74px;
+}
+i.ivb.status.st1, i.ivb.status.st9 {
+    background-position: -790px -74px;
+}
+i.ivb.status.st2 {
+    background-position: -856px -74px;
+}
+i.ivb.status.st3 {
+    background-position: -922px -74px;
+}
+i.ivb.status.st4 {
+    background-position: -988px -74px;
+}
+i.ivb.status.st5 {
+    background-position: -1054px -74px;
+}
+i.icb.delivery, i.icb.delivery:before {
+    width: 46px;
+    height: 27px;
+    background-position: -475px -225px;
+}
+i.ic.settings, a.ic.settings {
+    width: 33px;
+    height: 32px;
+    transition: .5s;
+    background-position: -423px -172px;
+}
+i.ic.settings:hover, a.ic.settings:hover {
+    transform: rotate(45deg);
+}
+i.ic.consultant {
+    width: 26px;
+    height: 38px;
+    background-position: -124px -169px;
+}
+i.ic.pointer {
+    width: 33px;
+    height: 32px;
+    background-position: -423px -172px;
+}
+i.ic.day {
+    width: 26px;
+    height: 27px;
+    background-position: -498px -46px;
+}
+i.ic.night {
+    width: 26px;
+    height: 27px;
+    background-position: -546px -45px;
+}
+i.ic.background {
+    width: 26px;
+    height: 27px;
+    background-position: -498px -110px;
+}
+i.ic.img5 {
+    width: 40px;
+    height: 33px;
+    background-position: -373px -222px;
+}
+/* user */
+i.ic.user {
+    width: 25px;
+    height: 31px;
+    background-position: -24px -173px;
+}
+/* flags.svg */
+div.maps > a, i.maps {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+div.maps > a {
+    margin: 5px;
+}
+div.maps > a:after,
+.maps.pl-pl a.map-pl,
+.maps.en-gb a.map-gb,
+.maps.de-de a.map-de,
+.maps.fr-fr a.map-fr,
+.maps.es-es a.map-es,
+.maps.it-it a.map-it,
+.maps.ru-ru a.map-ru,
+.maps.el-gr a.map-gr,
+.maps.hr-hr a.map-hr,
+.maps.hu-hu a.map-hu,
+.maps.ro-ro a.map-ro,
+.maps.sk-sk a.map-sk,
+.maps.bg-bg a.map-bg,
+div.maps .hpop > h4 > i {
+    display: none;
+}
+div.maps > a > s, i.maps > s {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(/skin/3/gif/icons_6j.svg);
+    transition: .5s;
+}
+.map-pl > s {
+    background-position: -110px -65px;
+}
+.map-en > s, .map-gb > s {
+    background-position: -2px -65px;
+}
+.map-de > s {
+    background-position: -38px -65px;
+}
+.map-fr > s {
+    background-position: -74px -65px;
+}
+.map-es > s {
+    background-position: -146px -65px;
+}
+.map-it > s {
+    background-position: -182px -65px;
+}
+.map-ru > s {
+    background-position: -218px -65px;
+}
+.map-gr > s {
+    background-position: -254px -65px;
+}
+.map-hr > s {
+    background-position: -290px -65px;
+}
+.map-hu > s {
+    background-position: -326px -65px;
+}
+.map-ro > s {
+    background-position: -362px -65px;
+}
+.map-bg > s {
+    background-position: -398px -65px;
+}
+.map-sk > s {
+    background-position: -434px -65px;
+}
+
+div.maps > a:hover > s:after {
+    content: '';
+    background: rgb(255 255 255 / 50%);
+    opacity: 1;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+}
+div.maps > a > b, div.maps > i > b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 7px;
+}
+div.maps > a:hover > b {
+    opacity: 1;
+}
+div.spop.spox > i.maps > s {
+    transition: none;
+}
+div.spop.spox.act > i.maps > s {
+    opacity: 1;
+    background-position: -289px -144px;
+}
+.headerRight div.spop.maps > .hpop {
+    transform: translateX(-10px);
+}
+/*
+div.maps > a, i.maps {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    width: 32px;
+    height: 32px;
+    background-image: url(/skin/3/gif/icons_6j.svg);
+    text-indent: 999px;
+    overflow: hidden;
+}
+a.map-pl, i.map-pl-pl {
+    background-position: -110px -65px;
+}
+.maps.mapq-pl-pl, .maps.pl-pl a.map-pl, a.map-pl:hover, i.map-pl-pl:hover {
+    background-position: -25px -25px;
+}
+a.map-gb, i.map-en-gb {
+    background-position: -2px -65px;
+}
+.maps.mapq-en-gb, .maps.en-gb a.map-gb, a.map-gb:hover, i.map-en-gb:hover {
+    background-position: -92px -25px;
+}
+a.map-de, i.map-de-de {
+    background-position: -38px -65px;
+}
+a.map-fr, i.map-fr-fr {
+    background-position: -74px -65px;
+}
+a.map-es, i.map-es-es {
+    background-position: -146px -65px;
+}
+a.map-it, i.map-it-it {
+    background-position: -182px -65px;
+}
+a.map-ru, i.map-ru-ru {
+    background-position: -218px -65px;
+}
+a.map-gr, i.map-el-gr {
+    background-position: -254px -65px;
+}
+a.map-hr, i.map-hr-hr {
+    background-position: -290px -65px;
+}
+a.map-hu, i.map-hu-hu {
+    background-position: -326px -65px;
+}
+a.map-ro, i.map-ro-ro {
+    background-position: -362px -65px;
+}
+a.map-sk, i.map-sk-sk {
+    background-position: -398px -65px;
+}
+a.map-bg, i.map-bg-bg {
+    background-position: -434px -65px;
+}
+*/
+/* load */
+.load {
+    position: relative;
+}
+.load:before {
+    content: '';
+    display: inline-block;
+    background: url('/img/loader.gif') 50% 50% / 50% no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+/* cart */
+i.ic.cart {
+    width: 32px;
+    height: 27px;
+    background-position: -23px -225px;
+}
+/* notice */
+i.ic.notice {
+    width: 22px;
+    height: 22px;
+    background-position: -548px -114px;
+}
+/* minus */
+i.icb.minus, i.icb.minus:before {
+    width: 16px;
+    height: 10px;
+    background-position: -333px -54px;
+}
+/* position */
+i.position {
+    display: inline-block;
+    width: 12px;
+    height: 18px;
+    vertical-align: middle;
+    cursor: move;
+}
+i.position:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: #c1c1c1;
+    box-shadow: 7px 0px 0 #c1c1c1, 0px 7px 0 #c1c1c1, 7px 7px 0 #c1c1c1, 0px 14px 0 #c1c1c1, 7px 14px 0 #c1c1c1;
+}
+i.position:hover:before {
+    background: #052045;
+    box-shadow: 7px 0px 0 #c1c1c1, 0px 7px 0 #fcc302, 7px 7px 0 #fcc302, 0px 14px 0 #c1c1c1, 7px 14px 0 #052045;
+}
+
+/* refresh */
+    i .ic.refresh {
+    width: 25px;
+    height: 22px;
+    background-position: -598px -114px;
+    transition: .5s;
+}
+i.ic.refresh:hover {
+    transform: rotate( 180deg );
+}
+/* delete */
+i.icb.delete, i.icb.delete:before {
+    width: 23px;
+    height: 24px;
+    background-position: -648px -47px;
+}
+/* button left */
+i.icb.left, i.icb.left:before {
+    width: 13px;
+    height: 13px;
+    background-position: -387px -53px;
+}
+/* button right */
+i.icb.right, i.icb.right:before {
+    width: 13px;
+    height: 13px;
+    background-position: -414px -53px;
+}
+/* button top */
+i.icb.top, i.icb.top:before {
+    width: 22px;
+    height: 14px;
+    background-position: -359px -46px;
+}
+/* button bottom */
+i.icb.bottom, i.icb.bottom:before {
+    width: 22px;
+    height: 14px;
+    background-position: -359px -59px;
+}
+/* lista zakupów */
+i.icb.lists, i.icb.lists:before {
+    width: 23px;
+    height: 32px;
+    background-position: -323px -172px;
+}
+i.icb.listn, i.icb.listn:before {
+    width: 23px;
+    height: 32px;
+    background-position: -954px -109px;
+}
+/* produkt z CSV */
+i.icb.addCSV, i.icb.addCSV:before {
+    width: 24px;
+    height: 42px;
+    background-position: -123px -104px;
+}
+/* home */
+i.icb.home, i.icb.home:before {
+    width: 29px;
+    height: 30px;
+    background-position: -724px -173px;
+}
+/* list */
+i.icb.list, i.icb.list:before {
+    width: 24px;
+    height: 30px;
+    background-position: -323px -173px;
+}
+/* pen */
+i.icb.pen, i.icb.pen:before {
+    width: 28px;
+    height: 28px;
+    background-position: -599px -45px;
+}
+/* payments */
+i.icb.payments {
+    width: 22px;
+    height: 30px;
+    background-position: -849px -44px;
+}
+/* eye */
+i.icb.eye, i.icb.eye:before {
+    width: 31px;
+    height: 17px;
+    background-position: -748px -51px;
+}
+i.icb.eye.open:before {
+    transform: scaleY(1.5);
+}
+/* three dots */
+i.icb.three {
+    width: 20px;
+    height: 4px;
+    background-position: -280px -246px;
+}
+/* PDF */
+i.icb.pdf, i.icb.pdf:before {
+    width: 24px;
+    height: 42px;
+    background-position: -74px -104px;
+}
+/* ZIP */
+i.icb.zip, i.icb.zip:before {
+    width: 24px;
+    height: 42px;
+    background-position: -323px -104px;
+}
+/* xml */
+i.icb.xml, i.icb.xml:before {
+    width: 24px;
+    height: 42px;
+    background-position: -24px -104px;
+}
+/* csv */
+i.icb.csv, i.icb.csv:before {
+    width: 25px;
+    height: 42px;
+    background-position: -123px -104px;
+}
+/* news */
+i.icb.news, i.icb.news:before {
+    width: 31px;
+    height: 31px;
+    background-position: -848px -223px;
+}
+/* previews */
+i.icb.previews, i.icb.previews:before {
+    width: 31px;
+    height: 31px;
+    background-position: -873px -172px;
+}
+/* specialPrices */
+i.icb.specialPrices, i.icb.specialPrices:before {
+    width: 31px;
+    height: 31px;
+    background-position: -218px -223px;
+}
+/* newDeliveries */
+i.icb.newDeliveries, i.icb.newDeliveries:before {
+    width: 31px;
+    height: 31px;
+    background-position: -122px -223px;
+}
+/* bundle */
+i.icb.bundles, i.icb.bundles:before {
+    width: 45px;
+    height: 31px;
+    background-position: -476px -223px;
+}
+/* phone */
+i.icb.phone, i.icb.phone:before {
+    width: 31px;
+    height: 31px;
+    background-position: -166px -274px;
+}
+/* bundle */
+i.icb.sale, i.icb.sale:before {
+    width: 32px;
+    height: 35px;
+    background-position: -699px -221px;
+}
+/* left arrow */
+
+/* arrow right */
+
+/* down arrow */
+.iva.downArrow:after {
+    width: 10px;
+    height: 15px;
+    background-position: -88px -72px;
+}
+/* facebook */
+.ic.facebook {
+    width: 18px;
+    height: 35px;
+    background-position: -799px -107px;
+}
+/* linkedin */
+.ic.linkedin {
+    width: 32px;
+    height: 35px;
+    background-position: -849px -107px;
+}
+/* weknowhow */
+.ic.weknowhow {
+    width: 35px;
+    height: 35px;
+    background-position: -898px -107px;
+}
+/* click */
+i.icb.click, i.icb.click:before {
+    width: 24px;
+    height: 34px;
+    background-position: -549px -221px;
+}
+/* search plus */
+i.icb.searchPlus, i.icb.searchPlus:before {
+    width: 26px;
+    height: 24px;
+    background-position: -208px -47px;
+}
+/* like */
+.ic.like {
+    width: 42px;
+    height: 26px;
+    background-position: -173px -175px;
+}
+/* packet */
+.ic.packet {
+    width: 32px;
+    height: 28px;
+    background-position: -223px -174px;
+}
+/* color */
+.orange {
+    color: #fbc200;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+/* icons.6.svg */
+i.i6, a.i6, s.i6, i.i6b, i.i6b:before, i.i6a:after {
+    width: 22px;
+    height: 23px;
+    cursor: pointer;
+    transition: .5s;
+    display: inline-block;
+    background-image: url('/skin/3/gif/icons_6j.svg');
+}
+i.i6.qrcode, i.i6.chat, i.i6.envelope, i.i6.taskList, i.i6.person, i.i6.basket, i.i6.mtfo {
+    width: 32px;
+    height: 32px;
+}
+.i6.white, body:not(.l1) i.i6, body:not(.l1) a.i6, body:not(.l1) s.i6, body:not(.l1) i.i6b, body:not(.l1) i.i6b:before, body:not(.l1) i.i6a:after {
+    filter: invert(1);
+}
+i.i6.open:before {
+    content: "";
+    background: #fff url(/img/loader.gif) 50% 50% / 80% no-repeat;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+i.i6.search {
+    /*background-position: -7px -113px;*/
+    background-position: -399px -151px
+}
+i.i6.search:not(.open):hover {
+    /*transform: rotate3d(1, 1, 0, 180deg);*/
+}
+i.i6.sun {
+    background-position: -44px -112px;
+}
+i.i6.moon {
+    background-position: -81px -112px;
+}
+i.i6.arrowDown {
+    background-position: -44px -155px;
+}
+i.i6.arrowUp {
+    background-position: -80px -150px;
+    transform: rotate(180deg);
+}
+i.i6.qrcode {
+    /* background-position: -508px -145px; */
+    transition: none;
+    background-position: -219px -184.5px;
+}
+.qr-scanner:not(.act) i.i6.qrcode:hover {
+    transform: scaleX(-1);
+    /* background-position: -506px -145px; */
+    background-position: -219px -184.5px;
+}
+i.i6.filt {
+    background-position: -366px -151px;
+    transition: none;
+    width: 24px;
+}
+i.i6.chat {
+    background-position: -684px -108px;
+    width: 35px;
+}
+i.i6.envelope {
+    background-position: -109px -174.5px;
+    width: 35px;
+}
+i.i6.taskList {
+    /* background-position: -147px -108px; */
+    background-position: -255px -182px;
+}
+i.i6.person {
+    background-position: -183px -109px;
+}
+i.i6.person.isl {
+    background-position: -183px -202px;
+}
+i.i6.person.isl, body.l2 div.spop.spox.act > i.isl {
+    transform: none;
+    filter: none;
+}
+div.spop.spox.act > i.isl {
+    background-position: -290.5px -144.5px;
+}
+i.i6.basket {
+    background-position: -221px -106px;
+    width: 28px;
+}
+i.i6.list {
+    background-position: -150px -112px;
+    height: 25px;
+    width: 25px;
+}
+i.i6.lists {
+    background-position: -583px -113px;
+}
+i.i6.like {
+    position: relative;
+    background-position: -548px -114px;
+    transition: none;
+}
+i.i6.like.act {
+    /*filter: invert(1);*/
+    /*filter: brightness(4);*/
+    background-position: -469.5px -536.5px;
+}
+i.i6.like.act:before, i.i6.like.act:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    width: 10px;
+    height: 1px;
+    background: #000;
+    transition: .5s;
+}
+i.i6.like.act:hover:before {
+    transform: rotate(-45deg);
+}
+i.i6.like.act:hover:after { 
+    transform: rotate(45deg);
+}
+i.i6.like.act:not(:hover):after {
+    top: 10px;
+    left: 9px;
+    transform: rotate(-35deg);
+    width: 8px;
+}
+i.i6.like.act:not(:hover):before {
+    transform: rotate(56deg);
+    width: 5px;
+    top: 11px;
+    left: 6px;
+}
+i.i6.ok {
+    width: 37px;
+    height: 37px;
+    background-position: -15px -238px;
+    border-radius: 100%;
+    /*box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);*/
+}
+i.i6.okb {
+    width: 68px;
+    height: 68px;
+    background-position: -163px -405px;
+    border-radius: 100%;
+}
+i.i6.clos, s.i6.clos {
+    width: 14px;
+    height: 14px;
+    background-position: -299px -154px;
+}
+i.i6.clos:hover, s.i6.clos:hover {
+    transform: rotate(90deg);
+}
+i.i6.csv {
+    background-position: -331px -149px;
+}
+i.i6.csv:hover {
+    transform: scale(1.2);
+}
+i.i6.cart {
+    background-position: -221px -110px;
+    width: 25px;
+    height: 26px;
+}
+i.i6.packet, .btn-addToCart-P i.i6.cart, .pp-box i.i6.cart {
+    background-position: -649px -111px;
+    width: 32px;
+    height: 26px;
+    /* visibility: hidden; */
+    /* width: 0 !important; */
+    /* margin: 0 !important; */
+}
+i.i6.gazele_biznesu {
+    background-position: -8px -8px;
+    width: 137px;
+    height: 41px;
+}
+i.i6.odpowiada_inwestorom {
+    background-position: -166px -11px;
+    width: 116px;
+    height: 41px;
+}
+i.i6.rzetelna_firma {
+    background-position: -304px -11px;
+    width: 93px;
+    height: 41px;
+}
+i.i6.zig {
+    background-position: -418px -10px;
+    width: 46px;
+    height: 41px;
+}
+i.i6.facebook {
+    height: 35px;
+    width: 35px;
+    background-position: -468px -63px;
+}
+i.i6.linkedin {
+    height: 35px;
+    width: 35px;
+    background-position: -505px -63px;
+}
+i.i6.youtube {
+    height: 35px;
+    width: 35px;
+    background-position: -541px -63px;
+}
+i.i6.mastercard {
+    height: 34px;
+    width: 54px;
+    background-position: -4px -312px;
+}
+i.i6.dotpay {
+    height: 45px;
+    width: 118px;
+    background-position: -76px -312px;
+}
+i.i6.visa {
+    height: 30px;
+    width: 93px;
+    background-position: -605px -322px;
+}
+i.i6.blik {
+    height: 45px;
+    width: 68px;
+    background-position: -204px -312px;
+}
+i.i6.przelewy24 {
+    height: 34px;
+    width: 103px;
+    background-position: -284px -318px;
+}
+i.i6.gpay {
+    height: 38px;
+    width: 96px;
+    background-position: -398px -320px;
+}
+i.i6.apay {
+    height: 41px;
+    width: 92px;
+    background-position: -498px -317px;
+}
+i.i6.adlist {
+    background-position: -583px -113px;
+}
+i.i6.delete, i.i6.trash {
+    background-position: -583px -147px;
+}
+i.i6.pen, i.i6.edit {
+    background-position: -618px -148px;
+}
+i.i6.info {
+    background-position: -254px -145px;
+    width: 32px;
+    height: 32px;
+}
+i.i6.eye {
+    background-position: -10px -184px;
+    width: 22px;
+    height: 18px;
+}
+i.i6.eyeh {
+    background-position: -10px -206px;
+    width: 22px;
+    height: 18px;
+}
+i.i6.tfo {
+    background-position: -7px -363px;
+    width: 205px;
+    height: 31px;
+}
+i.i6.mtfo {
+    background-position: -489px -16px;
+}
+i.i6.plus {
+    height: 39px;
+    width: 39px;
+    background-position: -418px -239px;
+}
+i.i6.addCsv {
+    height: 40px;
+    width: 34px;
+    background-position: -519px -425px;
+}
+i.i6.addQr {
+    width: 40px;
+    height: 40px;
+    background-position: -468px -425px;
+}
+i.i6.tfo, i.i6.facebook, i.i6.linkedin {
+    filter: none !important;
+}
+i.i6.cookie {
+    background-position: -366px -150px;
+    filter: invert(1);
+}
+i.i6.wyk {
+    background-position: -481px -240px;
+    width: 38px;
+    height: 38px;
+}
+/* icons.5.svg */
+    i .ix, a.ix, s.ix, i.ixb, i.ixb:before, i.ixa:after {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    background-image: url('/skin/3/gif/icons_5.svg');
+} .ix.white, body:not(.l1) i.ix, body:not(.l1) a.ix, body:not(.l1) s.ix, body:not(.l1) i.ixb, body:not(.l1) i.ixb:before, body:not(.l1) i.ixa:after {
+    filter: invert(1);
+} .ixb.chat {
+    background-position: -6px -96px;
+} .ixb.envelope {
+    background-position: -54px -96px;
+} .ixb.taskList {
+    background-position: -100px -96px;
+} .ixb.basket {
+    background-position: -147px -96px;
+} .ixb.loupe {
+    background-position: -193px -96px;
+} .ixb.arrowDown {
+    background-position: -239px -96px;
+} .ixb.arrowUp {
+    background-position: -286px -96px;
+} .ixb.sun {
+    width: 25px;
+    height: 26px;
+    background-position: -339px -102px;
+} .ixb.moon {
+    width: 25px;
+    height: 26px;
+    background-position: -385px -102px;
+} .ixb.sprocket {
+    background-position: -425px -97px;
+} .ixb.bell {
+    background-position: -472px -97px;
+} .ixb.menu {
+    background-position: -518px -97px;
+} .ixb.closs {
+    background-position: -565px -96px;
+} .ixb.star {
+    background-position: -7px -143px;
+} .ixb.eye {
+    background-position: -53px -143px;
+} .ixb.refresh {
+    background-position: -100px -143px;
+} .ixb.vat {
+    background-position: -143px -143px;
+} .ixb.pdf {
+    background-position: -193px -143px;
+} .ixb.xml {
+    background-position: -239px -143px;
+} .ixb.zip {
+    background-position: -286px -143px;
+} .ixb.csv {
+    background-position: -333px -143px;
+} .ixb.packages {
+    background-position: -379px -143px;
+} .ixb.sale {
+    background-position: -426px -143px;
+} .ixb.delivery {
+    background-position: -471px -143px;
+} .ixb.megaphone {
+    background-position: -517px -143px;
+} .ixb.saleOf {
+    background-position: -565px -143px;
+} .ixb.click {
+    background-position: -6px -190px;
+} .ixb.transfer {
+    background-position: -53px -190px;
+} .ixb.ok {
+    background-position: -100px -190px;
+} .ixb.info {
+    background-position: -147px -190px;
+} .ixb.card {
+    background-position: -191px -190px;
+} .ixb.r {
+    background-position: -240px -190px;
+} .ixb.level {
+    background-position: -285px -190px;
+} .ixb.resize {
+    background-position: -333px -190px;
+} .ixb.filter {
+    background-position: -379px -190px;
+} .ixb.menu1 {
+    background-position: -425px -190px;
+} .ixb.menu2 {
+    background-position: -471px -190px;
+} .ixb.menu3 {
+    background-position: -518px -190px;
+} .ixb.menu4 {
+    background-position: -565px -190px;
+} .ixb.media {
+    background-position: -7px -236px;
+} .ixb.mediak {
+    width: 26px;
+    height: 26px;
+    background-position: -14px -242px;
+} .ixb.person {
+    background-position: -54px -236px;
+} .ixb.line {
+    background-position: -101px -236px;
+} .ixb.doubleok {
+    background-position: -143px -236px;
+} .ixb.sortaz {
+    background-position: -193px -236px;
+} .ixb.sort {
+    background-position: -239px -236px;
+} .ixb.arrowLeft {
+    background-position: -285px -236px;
+} .ixb.arrowRight {
+    background-position: -333px -236px;
+} .ixb.exit {
+    background-position: -377px -236px
+} .ixb.world {
+    background-position: -424px -236px;
+} .ixb.qrcode {
+    background-position: -472px -240px;
+} i.ixb.czempion {
+    background-position: -6px -372px;
+    width: 118px;
+    height: 48px;
+} i.ixb.inwestorom {
+    background-position: -139px -372px;
+    width: 118px;
+    height: 48px;
+} i.ixb.rzetelna {
+    background-position: -268px -372px;
+    width: 118px;
+    height: 48px;
+} i.ixb.zig {
+    background-position: -397px -372px;
+    width: 59px;
+    height: 48px;
+} i.ixb.mastercard {
+    background-position: -495px -372px;
+    width: 58px;
+    height: 48px;
+} i.ixb.przelew24 {
+    background-position: -5px -441px;
+    width: 102px;
+    height: 48px;
+} i.ixb.blik {
+    background-position: -138px -441px;
+    width: 70px;
+    height: 48px;
+} i.ixb.dotpay {
+    background-position: -269px -441px;
+    width: 120px;
+    height: 48px;
+}
+
+
+/* scrollbar */
+body::-webkit-scrollbar, body ::-webkit-scrollbar, body .scrollart::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    background: #3c3c3c;
+    background-color: #3c3c3c;
+} body::-webkit-scrollbar-track, body ::-webkit-scrollbar-track, body .scrollart::-webkit-scrollbar-track {
+    border-radius: 15px;
+    background: #3c3c3c;
+    background-color: #3c3c3c;
+} body::-webkit-scrollbar-thumb, body ::-webkit-scrollbar-thumb, body .scrollart::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: #1e1e1e;
+    background-color: #1e1e1e;
+    /*box-shadow: -2px 2px 10px rgba(5, 33, 69, 0.3);*/
+} body::-webkit-scrollbar-thumb:hover, body ::-webkit-scrollbar-thumb:hover, body .scrollart::-webkit-scrollbar-thumb:hover {
+    background: #000;
+    background-color: #000;
+    /*background: rgba(115, 123, 136, 0.9);*/
+    /*background-color: rgba(115, 123, 136, 0.9);*/
+} body::-webkit-scrollbar-thumb:active, body ::-webkit-scrollbar-thumb:active, body .scrollart::-webkit-scrollbar-thumb:active {
+    background: #000;
+    background-color: #000;
+    /*background: rgba(115, 123, 136, 0.9);*/
+    /*background-color: rgba(115, 123, 136, 0.9);*/
+}
+html, body, body .scrollart, div.atrybut.nmx > div, .product-gallery-thumb-list-img ul, #productDesc.boxOp ul.header {
+    /*scrollbar-color: #052145 #F8F8F8;*/
+    scrollbar-color: #f2bc02 #F8F8F8;
+    scrollbar-width: thin;
+}
+body:hover, body .scrollart:hover {
+    /*scrollbar-color: #052145 #F8F8F8;*/
+    scrollbar-color: #f2bc02 #F8F8F8;
+    scrollbar-width: thin;
+}
+/* scrollbar l1 */
+body.l1::-webkit-scrollbar, body.l1 ::-webkit-scrollbar, body.l1 .scrollart::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    background: #F8F8F8;
+    background-color: #F8F8F8;
+} .boxLg.mmB .conten1::-webkit-scrollbar {
+    width: 1px;
+} body.l1::-webkit-scrollbar-track, body.l1 ::-webkit-scrollbar-track, body.l1 .scrollart::-webkit-scrollbar-track {
+    border-radius: 15px;
+    background: #F8F8F8;
+    background-color: #F8F8F8;
+} body.l1::-webkit-scrollbar-thumb, body.l1 ::-webkit-scrollbar-thumb, body.l1 .scrollart::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: #052145;
+    background-color: #052145;
+    /*box-shadow: -2px 2px 10px rgba(5, 33, 69, 0.3);*/
+} body.l1::-webkit-scrollbar-thumb:hover, body.l1 ::-webkit-scrollbar-thumb:hover, body.l1 .scrollart::-webkit-scrollbar-thumb:hover {
+    background: #FBC200;
+    background-color: #FBC200;
+} body.l1::-webkit-scrollbar-thumb:active, body.l1 ::-webkit-scrollbar-thumb:active, body.l1 .scrollart::-webkit-scrollbar-thumb:active {
+    background: #FBC200;
+    background-color: #FBC200;
+}
+body.l1, body.l1 .scrollart {
+    /*scrollbar-color: #052145 #F8F8F8;*/
+    scrollbar-color: #f2bc02 #F8F8F8;
+    scrollbar-width: thin;
+}
+body.l1:hover, body.l1 .scrollart:hover {
+    /*scrollbar-color: #052145 #F8F8F8;*/
+    scrollbar-color: #f2bc02 #F8F8F8;
+    scrollbar-width: thin;
+}
+
+.list.all li[class^="icon_"] > a:before, .brcr li:not(.fir) div.list .ul > div[class^="icon_"] > a:before {
+    display: none;
+}
+
+body.l1 .newDeliveries ul::-webkit-scrollbar-thumb {
+    background: #FBC200;
+    background-color: #FBC200;
+}
+
+body.l1 .newDeliveries ul::-webkit-scrollbar-thumb:hover {
+    background: #052145;
+    background-color: #052145;
+}
+
+body.l1 .newDeliveries ul::-webkit-scrollbar-thumb:active {
+    background: #052145;
+    background-color: #052145;
+}
+
+body .newDeliveries ul, .boxLg.allCate.acl .boxML7, .NhomePage .SaleItem, .NhomePage .menu-left-mobi, div.miniProd, div.secKat, div.list-banner-m, section.breadcrumbs-list, .bootstrap-select.btn-group .dropdown-menu.inner, div.spop > .hpop, .s_ai_product .sap_ts, .boxLg.producenci, .NhomePage .nhp2 div.boxLg.wr4, .newDeliveries .data_dostawy, .onas6 .bx-slider.marki h2, .ladi46 .list > div > a > p {
+    /*scrollbar-color: #052145 #F8F8F8;*/
+    scrollbar-color: #f2bc02 #F8F8F8;
+    scrollbar-width: thin;
+}
+
+/*
+.list.all li[class^="icon_"] > a {
+    padding: 0 !important;
+}
+
+    .list.all li[class^="icon_"] > a:before,
+    .brcr li:not(.fir) div.list .ul > div[class^="icon_"] > a:before {
+        content: "";
+        display: inline-block;
+        background-image: url("https://360.telforceone.pl/n.kategorie.png");
+        width: 40px;
+        height: 40px;
+        margin-right: 2px;
+        vertical-align: middle;
+        filter: grayscale(1);
+    }
+
+    .list.all li[class^="icon_"]:hover > a:before {
+        filter: grayscale(0);
+    }
+*/
+.newDeliveries li[class^="icon_"] > a {
+    padding: 0 !important;
+} .newDeliveries li[class^="icon_"] > a:before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://360.telforceone.pl/n.kategorie.png");
+    width: 40px;
+    height: 40px;
+    margin-right: 2px;
+    vertical-align: middle;
+    filter: grayscale(1);
+} .newDeliveries li[class^="icon_"]:hover > a:before {
+    filter: grayscale(0);
+} #producenciLista .list.all li[class^="icon_"] > a {
+    padding: 0 !important;
+} #producenciLista .list.all li[class^="icon_"] > a:before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://360.telforceone.pl/n.kategorie.png");
+    width: 40px;
+    height: 40px;
+    margin-right: 2px;
+    vertical-align: middle;
+    filter: grayscale(1);
+} #producenciLista .list.all li[class^="icon_"]:hover > a:before {
+    filter: grayscale(0);
+}
+/* GSM */
+.list.all li.icon_1_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_1 > a:before {
+    background-position: -2px -2px;
+} .list.all li.icon_1_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_2 > a:before {
+    background-position: -44px -2px;
+} .list.all li.icon_1_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_3 > a:before {
+    background-position: -86px -2px;
+} .list.all li.icon_1_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_4 > a:before {
+    background-position: -128px -2px;
+} .list.all li.icon_1_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_5 > a:before {
+    background-position: -170px -2px;
+} .list.all li.icon_1_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_6 > a:before {
+    background-position: -212px -2px;
+} .list.all li.icon_1_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_7 > a:before {
+    background-position: -254px -2px;
+} .list.all li.icon_1_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_8 > a:before {
+    background-position: -296px -2px;
+} .list.all li.icon_1_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_9 > a:before {
+    background-position: -338px -2px;
+} .list.all li.icon_1_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_1_10 > a:before {
+    background-position: -380px -2px;
+} .list.all li.icon_2_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_1 > a:before {
+    background-position: -2px -44px;
+} .list.all li.icon_2_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_2 > a:before {
+    background-position: -44px -44px;
+} .list.all li.icon_2_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_3 > a:before {
+    background-position: -86px -44px;
+} .list.all li.icon_2_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_4 > a:before {
+    background-position: -128px -44px;
+} .list.all li.icon_2_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_5 > a:before {
+    background-position: -170px -44px;
+} .list.all li.icon_2_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_6 > a:before {
+    background-position: -212px -44px;
+} .list.all li.icon_2_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_7 > a:before {
+    background-position: -254px -44px;
+} .list.all li.icon_2_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_8 > a:before {
+    background-position: -296px -44px;
+} .list.all li.icon_2_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_9 > a:before {
+    background-position: -338px -44px;
+} .list.all li.icon_2_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_2_10 > a:before {
+    background-position: -380px -44px;
+} .list.all li.icon_3_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_1 > a:before {
+    background-position: -2px -86px;
+} .list.all li.icon_3_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_2 > a:before {
+    background-position: -44px -86px;
+} .list.all li.icon_3_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_3 > a:before {
+    background-position: -86px -86px;
+} .list.all li.icon_3_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_4 > a:before {
+    background-position: -128px -86px;
+} .list.all li.icon_3_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_5 > a:before {
+    background-position: -170px -86px;
+} .list.all li.icon_3_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_6 > a:before {
+    background-position: -212px -86px;
+} .list.all li.icon_3_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_7 > a:before {
+    background-position: -254px -86px;
+} .list.all li.icon_3_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_8 > a:before {
+    background-position: -296px -86px;
+} .list.all li.icon_3_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_9 > a:before {
+    background-position: -338px -86px;
+} .list.all li.icon_3_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_3_10 > a:before {
+    background-position: -380px -86px;
+} .list.all li.icon_4_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_1 > a:before {
+    background-position: -2px -128px;
+} .list.all li.icon_4_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_2 > a:before {
+    background-position: -44px -128px;
+} .list.all li.icon_4_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_3 > a:before {
+    background-position: -86px -128px;
+} .list.all li.icon_4_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_4 > a:before {
+    background-position: -128px -128px;
+} .list.all li.icon_4_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_5 > a:before {
+    background-position: -170px -128px;
+} .list.all li.icon_4_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_6 > a:before {
+    background-position: -212px -128px;
+} .list.all li.icon_4_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_7 > a:before {
+    background-position: -254px -128px;
+} .list.all li.icon_4_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_8 > a:before {
+    background-position: -296px -128px;
+} .list.all li.icon_4_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_9 > a:before {
+    background-position: -338px -128px;
+} .list.all li.icon_4_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_4_10 > a:before {
+    background-position: -380px -128px;
+} .list.all li.icon_5_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_1 > a:before {
+    background-position: -2px -170px;
+} .list.all li.icon_5_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_2 > a:before {
+    background-position: -44px -170px;
+} .list.all li.icon_5_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_3 > a:before {
+    background-position: -86px -170px;
+} .list.all li.icon_5_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_4 > a:before {
+    background-position: -128px -170px;
+} .list.all li.icon_5_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_5 > a:before {
+    background-position: -170px -170px;
+} .list.all li.icon_5_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_6 > a:before {
+    background-position: -212px -170px;
+} .list.all li.icon_5_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_7 > a:before {
+    background-position: -254px -170px;
+} .list.all li.icon_5_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_8 > a:before {
+    background-position: -296px -170px;
+} .list.all li.icon_5_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_9 > a:before {
+    background-position: -338px -170px;
+} .list.all li.icon_5_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_5_10 > a:before {
+    background-position: -380px -170px;
+} .list.all li.icon_6_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_1 > a:before {
+    background-position: -2px -212px;
+} .list.all li.icon_6_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_2 > a:before {
+    background-position: -44px -212px;
+} .list.all li.icon_6_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_3 > a:before {
+    background-position: -86px -212px;
+} .list.all li.icon_6_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_4 > a:before {
+    background-position: -128px -212px;
+} .list.all li.icon_6_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_5 > a:before {
+    background-position: -170px -212px;
+} .list.all li.icon_6_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_6 > a:before {
+    background-position: -212px -212px;
+} .list.all li.icon_6_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_7 > a:before {
+    background-position: -254px -212px;
+} .list.all li.icon_6_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_8 > a:before {
+    background-position: -296px -212px;
+} .list.all li.icon_6_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_9 > a:before {
+    background-position: -338px -212px;
+} .list.all li.icon_6_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_6_10 > a:before {
+    background-position: -380px -212px;
+} .list.all li.icon_7_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_1 > a:before {
+    background-position: -2px -254px;
+} .list.all li.icon_7_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_2 > a:before {
+    background-position: -44px -254px;
+} .list.all li.icon_7_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_3 > a:before {
+    background-position: -86px -254px;
+} .list.all li.icon_7_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_4 > a:before {
+    background-position: -128px -254px;
+} .list.all li.icon_7_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_5 > a:before {
+    background-position: -170px -254px;
+} .list.all li.icon_7_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_6 > a:before {
+    background-position: -212px -254px;
+} .list.all li.icon_7_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_7 > a:before {
+    background-position: -254px -254px;
+} .list.all li.icon_7_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_8 > a:before {
+    background-position: -296px -254px;
+} .list.all li.icon_7_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_9 > a:before {
+    background-position: -338px -254px;
+} .list.all li.icon_7_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_7_10 > a:before {
+    background-position: -380px -254px;
+} .list.all li.icon_8_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_1 > a:before {
+    background-position: -2px -296px;
+} .list.all li.icon_8_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_2 > a:before {
+    background-position: -44px -296px;
+} .list.all li.icon_8_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_3 > a:before {
+    background-position: -86px -296px;
+} .list.all li.icon_8_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_4 > a:before {
+    background-position: -128px -296px;
+} .list.all li.icon_8_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_5 > a:before {
+    background-position: -170px -296px;
+} .list.all li.icon_8_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_6 > a:before {
+    background-position: -212px -296px;
+} .list.all li.icon_8_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_7 > a:before {
+    background-position: -254px -296px;
+} .list.all li.icon_8_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_8 > a:before {
+    background-position: -296px -296px;
+} .list.all li.icon_8_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_9 > a:before {
+    background-position: -338px -296px;
+} .list.all li.icon_8_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_8_10 > a:before {
+    background-position: -380px -296px;
+} .list.all li.icon_9_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_1 > a:before {
+    background-position: -2px -338px;
+} .list.all li.icon_9_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_2 > a:before {
+    background-position: -44px -338px;
+} .list.all li.icon_9_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_3 > a:before {
+    background-position: -86px -338px;
+} .list.all li.icon_9_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_4 > a:before {
+    background-position: -128px -338px;
+} .list.all li.icon_9_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_5 > a:before {
+    background-position: -170px -338px;
+} .list.all li.icon_9_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_6 > a:before {
+    background-position: -212px -338px;
+} .list.all li.icon_9_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_7 > a:before {
+    background-position: -254px -338px;
+} .list.all li.icon_9_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_8 > a:before {
+    background-position: -296px -338px;
+} .list.all li.icon_9_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_9 > a:before {
+    background-position: -338px -338px;
+} .list.all li.icon_9_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_9_10 > a:before {
+    background-position: -380px -338px;
+} .list.all li.icon_10_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_1 > a:before {
+    background-position: -2px -380px;
+} .list.all li.icon_10_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_2 > a:before {
+    background-position: -44px -380px;
+} .list.all li.icon_10_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_3 > a:before {
+    background-position: -86px -380px;
+} .list.all li.icon_10_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_4 > a:before {
+    background-position: -128px -380px;
+} .list.all li.icon_10_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_5 > a:before {
+    background-position: -170px -380px;
+} .list.all li.icon_10_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_6 > a:before {
+    background-position: -212px -380px;
+} .list.all li.icon_10_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_7 > a:before {
+    background-position: -254px -380px;
+} .list.all li.icon_10_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_8 > a:before {
+    background-position: -296px -380px;
+} .list.all li.icon_10_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_9 > a:before {
+    background-position: -338px -380px;
+} .list.all li.icon_10_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_10_10 > a:before {
+    background-position: -380px -380px;
+} .list.all li.icon_11_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_1 > a:before {
+    background-position: -2px -422px;
+} .list.all li.icon_11_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_2 > a:before {
+    background-position: -44px -422px;
+} .list.all li.icon_11_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_3 > a:before {
+    background-position: -86px -422px;
+} .list.all li.icon_11_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_4 > a:before {
+    background-position: -128px -422px;
+} .list.all li.icon_11_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_5 > a:before {
+    background-position: -170px -422px;
+} .list.all li.icon_11_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_6 > a:before {
+    background-position: -212px -422px;
+} .list.all li.icon_11_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_7 > a:before {
+    background-position: -254px -422px;
+} .list.all li.icon_11_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_8 > a:before {
+    background-position: -296px -422px;
+} .list.all li.icon_11_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_9 > a:before {
+    background-position: -338px -422px;
+} .list.all li.icon_11_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_11_10 > a:before {
+    background-position: -380px -422px;
+} .list.all li.icon_12_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_1 > a:before {
+    background-position: -2px -464px;
+} .list.all li.icon_12_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_2 > a:before {
+    background-position: -44px -464px;
+} .list.all li.icon_12_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_3 > a:before {
+    background-position: -86px -464px;
+} .list.all li.icon_12_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_4 > a:before {
+    background-position: -128px -464px;
+} .list.all li.icon_12_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_5 > a:before {
+    background-position: -170px -464px;
+} .list.all li.icon_12_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_6 > a:before {
+    background-position: -212px -464px;
+} .list.all li.icon_12_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_7 > a:before {
+    background-position: -254px -464px;
+} .list.all li.icon_12_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_8 > a:before {
+    background-position: -296px -464px;
+} .list.all li.icon_12_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_9 > a:before {
+    background-position: -338px -464px;
+} .list.all li.icon_12_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_12_10 > a:before {
+    background-position: -380px -464px;
+} .list.all li.icon_13_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_1 > a:before {
+    background-position: -2px -506px;
+} .list.all li.icon_13_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_2 > a:before {
+    background-position: -44px -506px;
+} .list.all li.icon_13_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_3 > a:before {
+    background-position: -86px -506px;
+} .list.all li.icon_13_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_4 > a:before {
+    background-position: -128px -506px;
+} .list.all li.icon_13_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_5 > a:before {
+    background-position: -170px -506px;
+} .list.all li.icon_13_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_6 > a:before {
+    background-position: -212px -506px;
+} .list.all li.icon_13_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_7 > a:before {
+    background-position: -254px -506px;
+} .list.all li.icon_13_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_8 > a:before {
+    background-position: -296px -506px;
+} .list.all li.icon_13_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_9 > a:before {
+    background-position: -338px -506px;
+} .list.all li.icon_13_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_13_10 > a:before {
+    background-position: -380px -506px;
+} .list.all li.icon_14_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_1 > a:before {
+    background-position: -2px -548px;
+} .list.all li.icon_14_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_2 > a:before {
+    background-position: -44px -548px;
+} .list.all li.icon_14_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_3 > a:before {
+    background-position: -86px -548px;
+} .list.all li.icon_14_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_4 > a:before {
+    background-position: -128px -548px;
+} .list.all li.icon_14_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_5 > a:before {
+    background-position: -170px -548px;
+} .list.all li.icon_14_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_6 > a:before {
+    background-position: -212px -548px;
+} .list.all li.icon_14_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_7 > a:before {
+    background-position: -254px -548px;
+} .list.all li.icon_14_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_8 > a:before {
+    background-position: -296px -548px;
+} .list.all li.icon_14_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_9 > a:before {
+    background-position: -338px -548px;
+} .list.all li.icon_14_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_10 > a:before {
+    background-position: -380px -548px;
+} .list.all li.icon_14_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_1 > a:before {
+    background-position: -2px -548px;
+} .list.all li.icon_14_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_2 > a:before {
+    background-position: -44px -548px;
+} .list.all li.icon_14_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_3 > a:before {
+    background-position: -86px -548px;
+} .list.all li.icon_14_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_4 > a:before {
+    background-position: -128px -548px;
+} .list.all li.icon_14_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_5 > a:before {
+    background-position: -170px -548px;
+} .list.all li.icon_14_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_6 > a:before {
+    background-position: -212px -548px;
+} .list.all li.icon_14_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_7 > a:before {
+    background-position: -254px -548px;
+} .list.all li.icon_14_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_8 > a:before {
+    background-position: -296px -548px;
+} .list.all li.icon_14_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_9 > a:before {
+    background-position: -338px -548px;
+} .list.all li.icon_14_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_14_10 > a:before {
+    background-position: -380px -548px;
+} .list.all li.icon_15_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_1 > a:before {
+    background-position: -2px -590px;
+} .list.all li.icon_15_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_2 > a:before {
+    background-position: -44px -590px;
+} .list.all li.icon_15_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_3 > a:before {
+    background-position: -86px -590px;
+} .list.all li.icon_15_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_4 > a:before {
+    background-position: -128px -590px;
+} .list.all li.icon_15_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_5 > a:before {
+    background-position: -170px -590px;
+} .list.all li.icon_15_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_6 > a:before {
+    background-position: -212px -590px;
+} .list.all li.icon_15_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_7 > a:before {
+    background-position: -254px -590px;
+} .list.all li.icon_15_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_8 > a:before {
+    background-position: -296px -590px;
+} .list.all li.icon_15_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_9 > a:before {
+    background-position: -338px -590px;
+} .list.all li.icon_15_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_15_10 > a:before {
+    background-position: -380px -590px;
+} .list.all li.icon_16_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_1 > a:before {
+    background-position: -2px -632px;
+} .list.all li.icon_16_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_2 > a:before {
+    background-position: -44px -632px;
+} .list.all li.icon_16_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_3 > a:before {
+    background-position: -86px -632px;
+} .list.all li.icon_16_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_4 > a:before {
+    background-position: -128px -632px;
+} .list.all li.icon_16_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_5 > a:before {
+    background-position: -170px -632px;
+} .list.all li.icon_16_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_6 > a:before {
+    background-position: -212px -632px;
+} .list.all li.icon_16_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_7 > a:before {
+    background-position: -254px -632px;
+} .list.all li.icon_16_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_8 > a:before {
+    background-position: -296px -632px;
+} .list.all li.icon_16_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_9 > a:before {
+    background-position: -338px -632px;
+} .list.all li.icon_16_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_16_10 > a:before {
+    background-position: -380px -632px;
+} .list.all li.icon_17_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_1 > a:before {
+    background-position: -2px -674px;
+} .list.all li.icon_17_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_2 > a:before {
+    background-position: -44px -674px;
+} .list.all li.icon_17_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_3 > a:before {
+    background-position: -86px -674px;
+} .list.all li.icon_17_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_4 > a:before {
+    background-position: -128px -674px;
+} .list.all li.icon_17_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_5 > a:before {
+    background-position: -170px -674px;
+} .list.all li.icon_17_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_6 > a:before {
+    background-position: -212px -674px;
+} .list.all li.icon_17_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_7 > a:before {
+    background-position: -254px -674px;
+} .list.all li.icon_17_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_8 > a:before {
+    background-position: -296px -674px;
+} .list.all li.icon_17_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_9 > a:before {
+    background-position: -338px -674px;
+} .list.all li.icon_17_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_17_10 > a:before {
+    background-position: -380px -674px;
+} .list.all li.icon_18_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_1 > a:before {
+    background-position: -2px -716px;
+} .list.all li.icon_18_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_2 > a:before {
+    background-position: -44px -716px;
+} .list.all li.icon_18_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_3 > a:before {
+    background-position: -86px -716px;
+} .list.all li.icon_18_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_4 > a:before {
+    background-position: -128px -716px;
+} .list.all li.icon_18_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_5 > a:before {
+    background-position: -170px -716px;
+} .list.all li.icon_18_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_6 > a:before {
+    background-position: -212px -716px;
+} .list.all li.icon_18_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_7 > a:before {
+    background-position: -254px -716px;
+} .list.all li.icon_18_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_8 > a:before {
+    background-position: -296px -716px;
+} .list.all li.icon_18_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_9 > a:before {
+    background-position: -338px -716px;
+} .list.all li.icon_18_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_18_10 > a:before {
+    background-position: -380px -716px;
+} .list.all li.icon_19_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_1 > a:before {
+    background-position: -2px -758px;
+} .list.all li.icon_19_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_2 > a:before {
+    background-position: -44px -758px;
+} .list.all li.icon_19_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_3 > a:before {
+    background-position: -86px -758px;
+} .list.all li.icon_19_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_4 > a:before {
+    background-position: -128px -758px;
+} .list.all li.icon_19_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_5 > a:before {
+    background-position: -170px -758px;
+} .list.all li.icon_19_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_6 > a:before {
+    background-position: -212px -758px;
+} .list.all li.icon_19_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_7 > a:before {
+    background-position: -254px -758px;
+} .list.all li.icon_19_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_8 > a:before {
+    background-position: -296px -758px;
+} .list.all li.icon_19_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_9 > a:before {
+    background-position: -338px -758px;
+} .list.all li.icon_19_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_19_10 > a:before {
+    background-position: -380px -758px;
+} .list.all li.icon_20_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_1 > a:before {
+    background-position: -2px -800px;
+} .list.all li.icon_20_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_2 > a:before {
+    background-position: -44px -800px;
+} .list.all li.icon_20_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_3 > a:before {
+    background-position: -86px -800px;
+} .list.all li.icon_20_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_4 > a:before {
+    background-position: -128px -800px;
+} .list.all li.icon_20_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_5 > a:before {
+    background-position: -170px -800px;
+} .list.all li.icon_20_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_6 > a:before {
+    background-position: -212px -800px;
+} .list.all li.icon_20_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_7 > a:before {
+    background-position: -254px -800px;
+} .list.all li.icon_20_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_8 > a:before {
+    background-position: -296px -800px;
+} .list.all li.icon_20_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_9 > a:before {
+    background-position: -338px -800px;
+} .list.all li.icon_20_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_20_10 > a:before {
+    background-position: -380px -800px;
+} .list.all li.icon_21_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_1 > a:before {
+    background-position: -2px -842px;
+} .list.all li.icon_21_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_2 > a:before {
+    background-position: -44px -842px;
+} .list.all li.icon_21_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_3 > a:before {
+    background-position: -86px -842px;
+} .list.all li.icon_21_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_4 > a:before {
+    background-position: -128px -842px;
+} .list.all li.icon_21_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_5 > a:before {
+    background-position: -170px -842px;
+} .list.all li.icon_21_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_6 > a:before {
+    background-position: -212px -842px;
+} .list.all li.icon_21_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_7 > a:before {
+    background-position: -254px -842px;
+} .list.all li.icon_21_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_8 > a:before {
+    background-position: -296px -842px;
+} .list.all li.icon_21_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_9 > a:before {
+    background-position: -338px -842px;
+} .list.all li.icon_21_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_21_10 > a:before {
+    background-position: -380px -842px;
+} .list.all li.icon_22_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_1 > a:before {
+    background-position: -2px -884px;
+} .list.all li.icon_22_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_2 > a:before {
+    background-position: -44px -884px;
+} .list.all li.icon_22_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_3 > a:before {
+    background-position: -86px -884px;
+} .list.all li.icon_22_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_4 > a:before {
+    background-position: -128px -884px;
+} .list.all li.icon_22_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_5 > a:before {
+    background-position: -170px -884px;
+} .list.all li.icon_22_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_6 > a:before {
+    background-position: -212px -884px;
+} .list.all li.icon_22_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_7 > a:before {
+    background-position: -254px -884px;
+} .list.all li.icon_22_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_8 > a:before {
+    background-position: -296px -884px;
+} .list.all li.icon_22_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_9 > a:before {
+    background-position: -338px -884px;
+} .list.all li.icon_22_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_22_10 > a:before {
+    background-position: -380px -884px;
+} .list.all li.icon_23_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_1 > a:before {
+    background-position: -2px -926px;
+} .list.all li.icon_23_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_2 > a:before {
+    background-position: -44px -926px;
+} .list.all li.icon_23_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_3 > a:before {
+    background-position: -86px -926px;
+} .list.all li.icon_23_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_4 > a:before {
+    background-position: -128px -926px;
+} .list.all li.icon_23_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_5 > a:before {
+    background-position: -170px -926px;
+} .list.all li.icon_23_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_6 > a:before {
+    background-position: -212px -926px;
+} .list.all li.icon_23_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_7 > a:before {
+    background-position: -254px -926px;
+} .list.all li.icon_23_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_8 > a:before {
+    background-position: -296px -926px;
+} .list.all li.icon_23_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_9 > a:before {
+    background-position: -338px -926px;
+} .list.all li.icon_23_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_23_10 > a:before {
+    background-position: -380px -926px;
+} .list.all li.icon_24_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_1 > a:before {
+    background-position: -2px -968px;
+} .list.all li.icon_24_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_2 > a:before {
+    background-position: -44px -968px;
+} .list.all li.icon_24_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_3 > a:before {
+    background-position: -86px -968px;
+} .list.all li.icon_24_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_4 > a:before {
+    background-position: -128px -968px;
+} .list.all li.icon_24_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_5 > a:before {
+    background-position: -170px -968px;
+} .list.all li.icon_24_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_6 > a:before {
+    background-position: -212px -968px;
+} .list.all li.icon_24_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_7 > a:before {
+    background-position: -254px -968px;
+} .list.all li.icon_24_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_8 > a:before {
+    background-position: -296px -968px;
+} .list.all li.icon_24_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_9 > a:before {
+    background-position: -338px -968px;
+} .list.all li.icon_24_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_24_10 > a:before {
+    background-position: -380px -968px;
+} .list.all li.icon_25_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_1 > a:before {
+    background-position: -2px -1010px;
+} .list.all li.icon_25_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_2 > a:before {
+    background-position: -44px -1010px;
+} .list.all li.icon_25_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_3 > a:before {
+    background-position: -86px -1010px;
+} .list.all li.icon_25_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_4 > a:before {
+    background-position: -128px -1010px;
+} .list.all li.icon_25_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_5 > a:before {
+    background-position: -170px -1010px;
+} .list.all li.icon_25_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_6 > a:before {
+    background-position: -212px -1010px;
+} .list.all li.icon_25_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_7 > a:before {
+    background-position: -254px -1010px;
+} .list.all li.icon_25_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_8 > a:before {
+    background-position: -296px -1010px;
+} .list.all li.icon_25_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_9 > a:before {
+    background-position: -338px -1010px;
+} .list.all li.icon_25_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_25_10 > a:before {
+    background-position: -380px -1010px;
+} .list.all li.icon_26_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_1 > a:before {
+    background-position: -2px -1052px;
+} .list.all li.icon_26_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_2 > a:before {
+    background-position: -44px -1052px;
+} .list.all li.icon_26_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_3 > a:before {
+    background-position: -86px -1052px;
+} .list.all li.icon_26_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_4 > a:before {
+    background-position: -128px -1052px;
+} .list.all li.icon_26_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_5 > a:before {
+    background-position: -170px -1052px;
+} .list.all li.icon_26_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_6 > a:before {
+    background-position: -212px -1052px;
+} .list.all li.icon_26_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_7 > a:before {
+    background-position: -254px -1052px;
+} .list.all li.icon_26_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_8 > a:before {
+    background-position: -296px -1052px;
+} .list.all li.icon_26_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_9 > a:before {
+    background-position: -338px -1052px;
+} .list.all li.icon_26_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_26_10 > a:before {
+    background-position: -380px -1052px;
+} .list.all li.icon_27_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_1 > a:before {
+    background-position: -2px -1094px;
+} .list.all li.icon_27_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_2 > a:before {
+    background-position: -44px -1094px;
+} .list.all li.icon_27_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_3 > a:before {
+    background-position: -86px -1094px;
+} .list.all li.icon_27_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_4 > a:before {
+    background-position: -128px -1094px;
+} .list.all li.icon_27_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_5 > a:before {
+    background-position: -170px -1094px;
+} .list.all li.icon_27_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_6 > a:before {
+    background-position: -212px -1094px;
+} .list.all li.icon_27_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_7 > a:before {
+    background-position: -254px -1094px;
+} .list.all li.icon_27_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_8 > a:before {
+    background-position: -296px -1094px;
+} .list.all li.icon_27_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_9 > a:before {
+    background-position: -338px -1094px;
+} .list.all li.icon_27_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_27_10 > a:before {
+    background-position: -380px -1094px;
+} .list.all li.icon_28_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_1 > a:before {
+    background-position: -2px -1136px;
+} .list.all li.icon_28_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_2 > a:before {
+    background-position: -44px -1136px;
+} .list.all li.icon_28_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_3 > a:before {
+    background-position: -86px -1136px;
+} .list.all li.icon_28_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_4 > a:before {
+    background-position: -128px -1136px;
+} .list.all li.icon_28_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_5 > a:before {
+    background-position: -170px -1136px;
+} .list.all li.icon_28_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_6 > a:before {
+    background-position: -212px -1136px;
+} .list.all li.icon_28_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_7 > a:before {
+    background-position: -254px -1136px;
+} .list.all li.icon_28_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_8 > a:before {
+    background-position: -296px -1136px;
+} .list.all li.icon_28_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_9 > a:before {
+    background-position: -338px -1136px;
+} .list.all li.icon_28_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_28_10 > a:before {
+    background-position: -380px -1136px;
+} .list.all li.icon_29_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_1 > a:before {
+    background-position: -2px -1178px;
+} .list.all li.icon_29_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_2 > a:before {
+    background-position: -44px -1178px;
+} .list.all li.icon_29_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_3 > a:before {
+    background-position: -86px -1178px;
+} .list.all li.icon_29_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_4 > a:before {
+    background-position: -128px -1178px;
+} .list.all li.icon_29_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_5 > a:before {
+    background-position: -170px -1178px;
+} .list.all li.icon_29_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_6 > a:before {
+    background-position: -212px -1178px;
+} .list.all li.icon_29_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_7 > a:before {
+    background-position: -254px -1178px;
+} .list.all li.icon_29_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_8 > a:before {
+    background-position: -296px -1178px;
+} .list.all li.icon_29_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_9 > a:before {
+    background-position: -338px -1178px;
+} .list.all li.icon_29_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_29_10 > a:before {
+    background-position: -380px -1178px;
+} .list.all li.icon_30_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_1 > a:before {
+    background-position: -2px -1220px;
+} .list.all li.icon_30_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_2 > a:before {
+    background-position: -44px -1220px;
+} .list.all li.icon_30_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_3 > a:before {
+    background-position: -86px -1220px;
+} .list.all li.icon_30_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_4 > a:before {
+    background-position: -128px -1220px;
+} .list.all li.icon_30_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_5 > a:before {
+    background-position: -170px -1220px;
+} .list.all li.icon_30_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_6 > a:before {
+    background-position: -212px -1220px;
+} .list.all li.icon_30_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_7 > a:before {
+    background-position: -254px -1220px;
+} .list.all li.icon_30_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_8 > a:before {
+    background-position: -296px -1220px;
+} .list.all li.icon_30_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_9 > a:before {
+    background-position: -338px -1220px;
+} .list.all li.icon_30_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_30_10 > a:before {
+    background-position: -380px -1220px;
+} .list.all li.icon_31_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_1 > a:before {
+    background-position: -2px -1262px;
+} .list.all li.icon_31_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_2 > a:before {
+    background-position: -44px -1262px;
+} .list.all li.icon_31_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_3 > a:before {
+    background-position: -86px -1262px;
+} .list.all li.icon_31_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_4 > a:before {
+    background-position: -128px -1262px;
+} .list.all li.icon_31_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_5 > a:before {
+    background-position: -170px -1262px;
+} .list.all li.icon_31_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_6 > a:before {
+    background-position: -212px -1262px;
+} .list.all li.icon_31_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_7 > a:before {
+    background-position: -254px -1262px;
+} .list.all li.icon_31_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_8 > a:before {
+    background-position: -296px -1262px;
+} .list.all li.icon_31_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_9 > a:before {
+    background-position: -338px -1262px;
+} .list.all li.icon_31_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_31_10 > a:before {
+    background-position: -380px -1262px;
+} .list.all li.icon_32_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_1 > a:before {
+    background-position: -2px -1304px;
+} .list.all li.icon_32_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_2 > a:before {
+    background-position: -44px -1304px;
+} .list.all li.icon_32_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_3 > a:before {
+    background-position: -86px -1304px;
+} .list.all li.icon_32_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_4 > a:before {
+    background-position: -128px -1304px;
+} .list.all li.icon_32_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_5 > a:before {
+    background-position: -170px -1304px;
+} .list.all li.icon_32_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_6 > a:before {
+    background-position: -212px -1304px;
+} .list.all li.icon_32_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_7 > a:before {
+    background-position: -254px -1304px;
+} .list.all li.icon_32_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_8 > a:before {
+    background-position: -296px -1304px;
+} .list.all li.icon_32_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_9 > a:before {
+    background-position: -338px -1304px;
+} .list.all li.icon_32_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_32_10 > a:before {
+    background-position: -380px -1304px;
+} .list.all li.icon_33_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_1 > a:before {
+    background-position: -2px -1346px;
+} .list.all li.icon_33_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_2 > a:before {
+    background-position: -44px -1346px;
+} .list.all li.icon_33_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_3 > a:before {
+    background-position: -86px -1346px;
+} .list.all li.icon_33_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_4 > a:before {
+    background-position: -128px -1346px;
+} .list.all li.icon_33_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_5 > a:before {
+    background-position: -170px -1346px;
+} .list.all li.icon_33_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_6 > a:before {
+    background-position: -212px -1346px;
+} .list.all li.icon_33_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_7 > a:before {
+    background-position: -254px -1346px;
+} .list.all li.icon_33_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_8 > a:before {
+    background-position: -296px -1346px;
+} .list.all li.icon_33_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_9 > a:before {
+    background-position: -338px -1346px;
+} .list.all li.icon_33_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_33_10 > a:before {
+    background-position: -380px -1346px;
+} .list.all li.icon_34_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_1 > a:before {
+    background-position: -2px -1388px;
+} .list.all li.icon_34_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_2 > a:before {
+    background-position: -44px -1388px;
+} .list.all li.icon_34_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_3 > a:before {
+    background-position: -86px -1388px;
+} .list.all li.icon_34_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_4 > a:before {
+    background-position: -128px -1388px;
+} .list.all li.icon_34_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_5 > a:before {
+    background-position: -170px -1388px;
+} .list.all li.icon_34_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_6 > a:before {
+    background-position: -212px -1388px;
+} .list.all li.icon_34_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_7 > a:before {
+    background-position: -254px -1388px;
+} .list.all li.icon_34_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_8 > a:before {
+    background-position: -296px -1388px;
+} .list.all li.icon_34_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_9 > a:before {
+    background-position: -338px -1388px;
+} .list.all li.icon_34_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_34_10 > a:before {
+    background-position: -380px -1388px;
+} .list.all li.icon_35_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_1 > a:before {
+    background-position: -2px -1430px;
+} .list.all li.icon_35_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_2 > a:before {
+    background-position: -44px -1430px;
+} .list.all li.icon_35_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_3 > a:before {
+    background-position: -86px -1430px;
+} .list.all li.icon_35_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_4 > a:before {
+    background-position: -128px -1430px;
+} .list.all li.icon_35_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_5 > a:before {
+    background-position: -170px -1430px;
+} .list.all li.icon_35_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_6 > a:before {
+    background-position: -212px -1430px;
+} .list.all li.icon_35_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_7 > a:before {
+    background-position: -254px -1430px;
+} .list.all li.icon_35_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_8 > a:before {
+    background-position: -296px -1430px;
+} .list.all li.icon_35_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_9 > a:before {
+    background-position: -338px -1430px;
+} .list.all li.icon_35_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_35_10 > a:before {
+    background-position: -380px -1430px;
+} .list.all li.icon_36_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_1 > a:before {
+    background-position: -2px -1472px;
+} .list.all li.icon_36_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_2 > a:before {
+    background-position: -44px -1472px;
+} .list.all li.icon_36_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_3 > a:before {
+    background-position: -86px -1472px;
+} .list.all li.icon_36_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_4 > a:before {
+    background-position: -128px -1472px;
+} .list.all li.icon_36_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_5 > a:before {
+    background-position: -170px -1472px;
+} .list.all li.icon_36_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_6 > a:before {
+    background-position: -212px -1472px;
+} .list.all li.icon_36_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_7 > a:before {
+    background-position: -254px -1472px;
+} .list.all li.icon_36_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_8 > a:before {
+    background-position: -296px -1472px;
+} .list.all li.icon_36_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_9 > a:before {
+    background-position: -338px -1472px;
+} .list.all li.icon_36_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_36_10 > a:before {
+    background-position: -380px -1472px;
+} .list.all li.icon_37_1 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_1 > a:before {
+    background-position: -2px -1514px;
+} .list.all li.icon_37_2 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_2 > a:before {
+    background-position: -44px -1514px;
+} .list.all li.icon_37_3 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_3 > a:before {
+    background-position: -86px -1514px;
+} .list.all li.icon_37_4 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_4 > a:before {
+    background-position: -128px -1514px;
+} .list.all li.icon_37_5 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_5 > a:before {
+    background-position: -170px -1514px;
+} .list.all li.icon_37_6 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_6 > a:before {
+    background-position: -212px -1514px;
+} .list.all li.icon_37_7 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_7 > a:before {
+    background-position: -254px -1514px;
+} .list.all li.icon_37_8 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_8 > a:before {
+    background-position: -296px -1514px;
+} .list.all li.icon_37_9 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_9 > a:before {
+    background-position: -338px -1514px;
+} .list.all li.icon_37_10 > a:before, .brcr li:not(.fir) div.list .ul > div.icon_37_10 > a:before {
+    background-position: -380px -1514px;
+}
+
+/* cookie new */
+.box_coo {
+    position: fixed;
+    z-index: -1;
+    background: #000;
+    transition: .5s;
+    color: #fff;
+    opacity: 0;
+    max-height: 80%;
+    overflow: auto;
+    box-shadow: 0 0 10px #000;
+}
+
+.cookie.act .box_coo {
+    opacity: 1;
+    z-index: 3000;
+}
+
+.box_coo[data-s="0"] .desc_coo > div[data-id="1"],
+.box_coo[data-s="1"] .desc_coo > div[data-id="1"],
+.box_coo[data-s="2"] .desc_coo > div[data-id="2"],
+.box_coo[data-s="3"] .desc_coo > div[data-id="3"] {
+    display: inline-block;
+}
+
+.box_coo .desc_coo > div {
+    display: none;
+}
+
+.box_coo b {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.box_coo p {
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+body .box_coo a {
+    color: #fbc200;
+    font-size: 14px;
+}
+
+body .box_coo a:hover {
+    color: #fff;
+}
+
+body .box_coo a:after {
+    content: "\f054";
+    font: normal normal normal 12px/1 FontAwesome;
+    margin-left: 10px;
+}
+
+.box_coo .but_coo > div {
+    border-radius: 20px;
+    background: #fff;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.box_coo .but_coo > div[data-b="2"]:after {
+    content: "\f054";
+    font: normal normal normal 12px/1 FontAwesome;
+    margin-left: 10px;
+}
+
+.box_coo .but_coo > div[data-b="1"] {
+    background: #fbc200;
+}
+
+.box_coo .title_coo {
+    display: table;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #fbc200;
+    margin-top: 20px;
+}
+
+.box_coo .title_coo > div {
+    display: table-cell;
+    padding: 20px;
+    width: 33.33%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.box_coo[data-s="1"] .title_coo > div[data-w="1"], .box_coo[data-s="2"] .title_coo > div[data-w="2"], .box_coo[data-s="3"] .title_coo > div[data-w="3"] {
+    border-bottom: 1px solid #fbc200;
+}
+
+.box_coo .desc_coo label {
+    float: right;
+}
+
+.box_coo .desc_coo div[data-id="2"] > div:not(:first-child) {
+    border-top: 1px solid;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.box_coo:not([data-s="2"]) .but_coo div[data-b="3"],
+.box_coo[data-s="2"] .but_coo div[data-b="2"] {
+    display: none;
+}
+.box_coo:not([data-s="0"]) .but_coo {
+    overflow: hidden;
+}
+@media (max-width: 999px) {
+    .box_coo {
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 20px);
+        max-width: 800px;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .box_coo .desc_coo {
+        border-top: 1px solid #fbc200;
+        padding-top: 20px;
+    }
+    .box_coo .but_coo {
+        border-top: 1px solid #fbc200;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    .box_coo .but_coo > div {
+        width: calc(33% - 18px);
+        margin: 10px;
+        display: inline-block;
+        float: right;
+    }
+}
+@media (max-width: 700px) {
+    .box_coo .but_coo > div {
+        width: calc(100% - 18px);
+    }
+}
+@media (max-width: 430px) {
+    .box_coo .title_coo > div {
+        display: block;
+        width: 100%;
+    }
+}
+@media (min-width: 1000px) {
+    .box_coo:not([data-s="0"]) {
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 20px);
+        max-width: 800px;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .box_coo[data-s="0"] {
+        left: 0;
+        right: 0;
+        bottom: -100%;
+    }
+    .cookie.act .box_coo[data-s="0"] {
+        bottom: 0;
+    }
+    .box_coo[data-s="0"] .title_coo {
+        display: none;
+    }
+
+    .box_coo[data-s="0"] .logo_coo {
+        width: 260px;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 20px;
+    }
+
+    .box_coo[data-s="0"] .desc_coo {
+        width: calc(100% - 530px);
+        display: inline-block;
+        vertical-align: middle;
+        padding: 20px 0;
+    }
+
+    .box_coo[data-s="0"] .but_coo {
+        width: 260px;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 20px;
+    }
+    .box_coo:not([data-s="0"]) .desc_coo {
+        border-top: 1px solid #fbc200;
+        padding-top: 20px;
+    }
+    .box_coo:not([data-s="0"]) .but_coo {
+        border-top: 1px solid #fbc200;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    .box_coo:not([data-s="0"]) .but_coo > div {
+        width: calc(33% - 18px);
+        margin: 10px;
+        display: inline-block;
+        float: right;
+    }
+}

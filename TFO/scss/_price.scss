@@ -1,0 +1,113 @@
+.num_but {
+  display: flex;
+}
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: #052145;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 400;
+  margin-right: 24px;
+  .total {
+    b {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+  .price_number {
+    font-size: 16px;
+  }
+}
+
+// --- listing
+.products {
+  .total {
+    display: none;
+    margin-top: 8px;
+  }
+  .price,
+  .total {
+    color: #052145;
+    text-align: right;
+    font-family: Stolzl;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    u {
+      color: #99a0a9;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  // active total
+  .tco {
+    .cenod,
+    u {
+      opacity: 1;
+      color: #99a0a9;
+      font-size: 13px;
+      font-weight: 400;
+    }
+    .total {
+      display: block;
+    }
+
+    .price {
+      color: #9eabbd;
+
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .indeks-wrapper {
+    display: flex;
+  }
+
+  // --lista
+  &.wl2 {
+    .right-part {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: center;
+      height: 100%;
+      @media (max-width: 800px) {
+        flex-direction: row;
+        display: flex !important;
+        align-items: center;
+        .price-wrapper {
+          margin-left: auto;
+        }
+      }
+    }
+    .price-wrapper {
+      margin-bottom: 8px;
+    }
+    .cenod {
+      opacity: 0;
+      margin-right: 5px;
+    }
+  }
+  // -- kafelki
+  &.wl3 {
+    .txr {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .indeks {
+      width: 50%;
+    }
+  }
+  .price-wrapper {
+    width: 50%;
+    margin-right: 0;
+    .price,
+    .total {
+      width: 100%;
+    }
+  }
+}

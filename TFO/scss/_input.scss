@@ -1,0 +1,127 @@
+/* new button -- input with units */
+.nbb:before,
+.nba:after {
+  content: "";
+}
+
+.nb,
+.nbb:before,
+.nba:after,
+div.num i.num_m:before,
+div.num i.num_p:before {
+  display: inline-block;
+  text-align: center;
+  font-size: 23px;
+  width: 36px;
+  height: 36px;
+  z-index: 2;
+  position: relative;
+}
+.nb:hover,
+.nbb:hover:before,
+.nba:hover:after {
+  border-color: #052145;
+  
+}
+
+div.num i.num_m,
+div.num i.num_p {
+  display: inline-block;
+  border-radius: 50px;
+  overflow: hidden;
+  vertical-align: middle;
+  /*box-shadow: -10px 10px 25px #0521451a;*/
+  border: 1px solid inherit;
+  // background: #052145;
+  color: #000;
+}
+div.num i.num_m:before {
+  content: "-";
+}
+div.num i.num_p:before {
+  content: "+";
+}
+.product {
+  &:hover {
+    div.num i.num_m,
+    div.num i.num_p {
+      background: #f4f4f4;
+      &:hover {
+        background: #052145;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+/* input number */
+div.num {
+  /*background: #f8f8f9;*/
+  /*border: 10px;*/
+  /*display: inline-block;*/
+  /*border-radius: 10px;*/
+  /*box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);*/
+  /*margin: 4px 0;*/
+  /*position: relative;*/
+  white-space: nowrap;
+}
+div.num input {
+  height: 36px;
+  min-width: 36px;
+  text-align: center;
+  vertical-align: middle;
+  transition: .5s;
+  opacity: 1;
+  font-size: 14px;
+}
+
+div.num input {
+  border: none;
+  border-top: 1px solid #dfe0e8;
+  border-bottom: 1px solid #dfe0e8;
+  border-radius: 0;
+  margin: 0 -17px;
+  padding: 0 15px;
+  width: 70px;
+  /* width: 30px; */
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 50px;
+  border: 1px solid #dfe0e8;
+}
+
+div.txr div.num input.w-1 {
+  width: 30px;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 50px;
+  border: 1px solid #dfe0e8;
+}
+
+div.txr div.num input.w-2 {
+  /*width: 41px;*/
+}
+
+div.txr div.num input.w-3 {
+  /*width: 51px;*/
+}
+
+div.txr div.num input.w-4 {
+  /*width: 58px;*/
+}
+
+div.txr div.num input.w-5 {
+  width: 75px;
+}
+
+div.txr div.num input.w-6 {
+  width: 80px;
+}
+
+body.l2 div.num input, body.l3 div.num input {
+  background: #1e1e1e;
+}
+body.l2 div.num i.num_m, body.l2 div.num i.num_p {
+  border-color: #EFEFF4;
+}

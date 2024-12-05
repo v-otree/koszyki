@@ -1,0 +1,32 @@
+// body.l1 .NhomePage {
+//     background: #f4f4f4;
+// }
+
+.ProdBox5-info {
+  display: flex;
+  align-items: center;
+}
+
+.product {
+  .favo.pb3 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+  .titm {
+    color: #8190a2;
+    margin-right: 40px;
+    .indeks {
+      margin-right: 24px;
+    }
+  }
+  &:hover {
+    .favo.pb3 {
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+    .titm {
+      color: #052145;
+    }
+  }
+}
+
